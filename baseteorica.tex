@@ -1,0 +1,103 @@
+
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm, graphicx}
+
+\title{Base Teórica da Estatística Gaussiana}
+\author{Thalita Carvalho Routh}
+\date{}
+\usepackage{titling}
+\setlength{\droptitle}{-3cm}
+
+\begin{document}
+\maketitle
+
+\section{Distribuição Normal (Gaussiana)}
+A \textbf{distribuição normal}, também chamada de \textbf{distribuição de Gauss}, é definida por sua função de densidade de probabilidade (PDF - \textit{Probability Density Function}):
+
+\begin{equation}
+    f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}
+\end{equation}
+
+Onde:
+\begin{itemize}
+    \item $ x $ é a variável aleatória contínua;
+    \item $ \mu $ é a \textbf{média} da distribuição;
+    \item $ \sigma^2 $ é a \textbf{variância};
+    \item $ \sigma $ é o \textbf{desvio padrão} ($ \sigma = \sqrt{\sigma^2} $);
+    \item $ e $ é a base do logaritmo natural ($ e \approx 2.718 $);
+    \item $ \pi $ é a constante matemática ($ \pi \approx 3.1416 $).
+\end{itemize}
+
+Essa função descreve a famosa \textbf{curva em forma de sino}, onde a maioria dos valores está próxima à média, e a probabilidade diminui à medida que nos afastamos dela.
+
+\section{Distribuição Normal Padrão (Z-score)}
+A \textbf{distribuição normal padrão} é uma normalização da distribuição normal, onde a média é $ \mu = 0 $ e o desvio padrão é $ \sigma = 1 $. Para converter uma variável aleatória $ x $ para a forma padronizada $ z $, utilizamos:
+
+\begin{equation}
+    z = \frac{x - \mu}{\sigma}
+\end{equation}
+
+Onde $ z $ representa o \textbf{Z-score}, que indica o número de desvios padrão que $ x $ está afastado da média.
+
+\section{Distribuição Normal Multivariada}
+A \textbf{distribuição normal multivariada} é uma generalização da normal univariada para múltiplas variáveis aleatórias. Sua função de densidade de probabilidade é:
+
+\begin{equation}
+    f(\mathbf{x}) = \frac{1}{(2\pi)^{k/2} |\Sigma|^{1/2}} \exp \left(-\frac{1}{2} (\mathbf{x} - \mathbf{\mu})^T \Sigma^{-1} (\mathbf{x} - \mathbf{\mu}) \right)
+\end{equation}
+
+\section{Intervalo de Confiança}
+O \textbf{intervalo de confiança} para a média de uma população normalmente distribuída é dado por:
+
+\begin{equation}
+    IC = \bar{x} \pm z_{\alpha/2} \frac{\sigma}{\sqrt{n}}
+\end{equation}
+
+\section{Testes de Hipóteses}
+
+\subsection{Teste Z}
+Usado quando a variância populacional é conhecida:
+
+\begin{equation}
+    Z = \frac{\bar{x} - \mu_0}{\sigma / \sqrt{n}}
+\end{equation}
+
+\subsection{Teste T de Student}
+Quando a variância populacional é desconhecida:
+
+\begin{equation}
+    T = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}
+\end{equation}
+
+\section{Correlação e Covariância}
+
+\subsection{Covariância}
+Mede a relação linear entre duas variáveis $ X $ e $ Y $:
+
+\begin{equation}
+    \text{Cov}(X, Y) = \mathbb{E}[(X - \mathbb{E}[X])(Y - \mathbb{E}[Y])]
+\end{equation}
+
+\subsection{Correlação de Pearson}
+
+\begin{equation}
+    \rho(X, Y) = \frac{\text{Cov}(X, Y)}{\sigma_X \sigma_Y}
+\end{equation}
+
+\section{Teorema Central do Limite}
+O \textbf{Teorema Central do Limite} afirma que, para um número grande de amostras $ n $, a média das amostras de qualquer distribuição tende a seguir uma distribuição normal:
+
+\begin{equation}
+    \bar{X} \sim N\left(\mu, \frac{\sigma^2}{n} \right)
+\end{equation}
+
+\section{Conclusão}
+A \textbf{estatística gaussiana} é essencial para modelagem de incertezas e tomada de decisões. Com conceitos como distribuição normal, intervalos de confiança, testes de hipóteses e correlação, podemos analisar dados de forma rigorosa. Seu uso é amplamente aplicado em ciência de dados, aprendizado de máquina, finanças e engenharia.
+
+Explicando de forma mais acessível, Imagine que você está tentando prever a temperatura de amanhã com base nos dias anteriores. Você sabe que a temperatura pode variar, mas também sabe que ela não muda de forma totalmente aleatória. 
+Existem padrões, como as estações do ano, o clima da sua cidade e outras influências. O modelo matemático ajuda a fazer previsões levando em conta esses padrões e incertezas.
+
+Basicamente, ele é um conjunto de números (ou variáveis) que seguem uma distribuição normal, aquela famosa "curva em forma de sino". Esse modelo é muito usado em inteligência artificial, ciência de dados e estatística porque consegue prever eventos futuros considerando informações do passado e da relação entre os dados.
+
+
+\end{document}
